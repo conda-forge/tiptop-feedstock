@@ -1,5 +1,5 @@
 {% set name = "tiptop" %}
-{% set version = "0.1.7" %}
+{% set version = "0.2.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tiptop-{{ version }}.tar.gz
-  sha256: a13a520116a5c1860af2a4ce93189fbb10063c334cb0ed4ab70c76196ba07355
+  sha256: be22427c4deb014fb4c1fa8ab831a9ce5d638f6fe0e85ab76fca837ffce1be39
 
 build:
   noarch: python
