@@ -42,7 +42,7 @@ test:
     - tiptop
   commands:
 #     - pip check
-    - pip list | grep "{{ name }}\s+{{ version }}"
+    - pip list | grep -E "{{ name }}\s+{{ version }}"
     - tiptop -h
     - pytest -vvv --capture=tee-sys tests
   requires:
