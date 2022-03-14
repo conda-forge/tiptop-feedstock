@@ -41,7 +41,8 @@ test:
   imports:
     - tiptop
   commands:
-    - pip check
+#     - pip check
+    - pip list | grep "{{ name }}\s+{{ version }}"
     - tiptop -h
     - pytest -vvv --capture=tee-sys tests
   requires:
