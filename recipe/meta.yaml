@@ -19,35 +19,25 @@ build:
 
 requirements:
   host:
-    - distro
-    - flit-core >=3.2,<4
     - pip
-    - psutil
-    - py-cpuinfo
     - python >=3.7
-    - textual >=0.1.15,<0.2
+    - setuptools>=61
   run:
     - distro
     - psutil
     - py-cpuinfo
     - python >=3.7
     - rich >=11.0.0
-    # Remove version for textural to resolve
-    - textual # >=0.1.15,<0.2
+    - textual >=0.1.15,<0.2
 
 test:
-  source_files:
-    - tests
   imports:
     - tiptop
   commands:
-#     - pip check
-    - pip list | grep -E "{{ name }}\s+{{ version }}"
+    - pip check
     - tiptop -h
-    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
-    - pytest
 
 about:
   home: https://github.com/nschloe/tiptop
