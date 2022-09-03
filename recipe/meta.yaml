@@ -1,5 +1,5 @@
 {% set name = "tiptop" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.8" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tiptop-{{ version }}.tar.gz
-  sha256: fdb65fa79efb5e7770ccd2d914a6dafcf6aed8113248a8327feb2b6ed3c66350
+  sha256: 1a94d2b42da333badcea60c57d7a16c9e57d0b7ab723345416052279a5e945f8
 
 build:
   noarch: python
@@ -19,35 +19,25 @@ build:
 
 requirements:
   host:
-    - distro
-    - flit-core >=3.2,<4
     - pip
-    - psutil
-    - py-cpuinfo
     - python >=3.7
-    - textual >=0.1.15,<0.2
+    - setuptools >=61
   run:
     - distro
     - psutil
     - py-cpuinfo
     - python >=3.7
     - rich >=11.0.0
-    # Remove version for textural to resolve
-    - textual # >=0.1.15,<0.2
+    - textual >=0.1.15,<0.2
 
 test:
-  source_files:
-    - tests
   imports:
     - tiptop
   commands:
-#     - pip check
-    - pip list | grep -E "{{ name }}\s+{{ version }}"
+    - pip check
     - tiptop -h
-    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
-    - pytest
 
 about:
   home: https://github.com/nschloe/tiptop
